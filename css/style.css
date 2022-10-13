@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+*:hover, *:focus, *:active, .nono {
+    outline: none;
+    box-shadow: none !important;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+main {
+    flex: 1 1 auto;
+}
+
+header .nav-link{
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* #catalog input[type="checkbox"] {
+    border: 0px;
+} */
+
+#registerModal input:checked, #catalog input:checked {
+    background-color: #FFC107;
+    border: 0px;
+}
+
+.guitarist {
+    background: url('../img/guitarist.jpg') 100% 30% no-repeat;
+    background-size: cover;
+    display: block;
+    height: 600px;
+}
+
+.guitarist h1, .guitarist p {
+    text-shadow: .5px .5px 2px #000;
+}
+
+.ulechka {
+    background: url('../img/ulechka.jpg') 100% 30% no-repeat;
+    background-size: cover;
+    display: block;
+    height: 600px;
+}
+
+.ulechka h1, .ulechka p {
+    text-shadow: .5px .5px 2px #000;
+}
+
+#catalog .list-group-item {
+    transition: .3s;
+}
+#catalog .list-group-item:hover {
+    background-color: rgb(213, 255, 255);
+}
+#catalog hr {
+    size: 5rem;
+}
+#catalog img {
+    height: 256px;
+}
+
+footer {
+    background-color: #202020;
+    background-size: 100%;
+    color: #fff;
+}
+
+.box {
+    width: auto;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: #fff;
+    /* padding: 20px; */
+}
+
+.box hr {
+    border: 1px thick rgba(0, 0, 0, 0.5);
+}
+
+#cart .box {
+    padding: 20px;
+    background-color: #fff;
+}
+#order .box {
+    padding: 20px;
+    background-color: #fff;
+}
+#admin_order .box {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 0px;
+}
+
+#user_order .box {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 0;
+}
+
+#succ .box {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.btnka {
+    width: 100%;
+}
+
+#buy {
+    position: fixed;
+    height: 100%;
+}
+
+.crumb li {
+    font-size: 14px;
+}
+
+.red-circle {
+    background: red;
+    border: 0.12875em solid red;
+    border-radius: 50%;
+    height: 1em;
+    width: 1em;
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>EBANEZ Blue Fish Poseidon IceCube Noob H57FGK82</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="icon/site.webmanifest">
+    <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+<body>
+    
+    <!--Войти и Регистрация-->
+
+    <div class="modal fade" id="enterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Вход</h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button> -->
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <form action="">
+                                <div class="mb-2">
+                                    <input type="text" placeholder="Логин" id="loginInput" name="login" class="form-control rounded-1 border-secondary">
+                                    <div class="invalid-feedback" id="loginError">Неверный логин</div>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="password" placeholder="Пароль" id="passwordInput" name="pass" class="form-control rounded-1 border-secondary">
+                                    <div class="invalid-feedback" id="passwordError">Неверный пароль</div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="text-center">
+                                <h5>
+                                    <b>Впервые у нас?</b>
+                                </h5>
+                                <button type="button" class="btn btn-warning rounded-1" data-bs-toggle="modal" data-bs-target="#registerModal">Зарегистрироваться</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary rounded-1" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-warning rounded-1">Войти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Регистрация</h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button> -->
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="mb-2">
+                            <input type="text" placeholder="Имя" id="nameInput" name="name" class="form-control rounded-1 border-dark">
+                            <div class="invalid-feedback" id="nameError">Введите имя</div>
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" placeholder="Фамилия" id="surnameInput" name="surname" class="form-control rounded-1 border-dark">
+                            <div class="invalid-feedback" id="surnameError">Введите фамилию</div>
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" placeholder="Отчество (необязательно)" id="patronymicInput" name="patronymic" class="form-control rounded-1 border-dark">
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" placeholder="Логин" id="loginInput" name="login" class="form-control rounded-1 border-dark">
+                            <div class="invalid-feedback" id="loginError">Введите логин</div>
+                        </div>
+                        <div class="mb-2">
+                            <input type="email" placeholder="Email" id="emailInput" name="email" class="form-control rounded-1 border-dark">
+                            <div class="invalid-feedback" id="emailError">Введите почту</div>
+                        </div>
+                        <div class="mb-2">
+                            <input type="password" placeholder="Пароль" class="form-control rounded-1 border-dark">
+                            <div class="invalid-feedback" id="passwordError">Введите пароль</div>
+                        </div>
+                        <div class="mb-2">
+                            <input type="password" placeholder="Повторите пароль" class="form-control rounded-1 border-dark">
+                            <div class="invalid-feedback" id="repPasswordError">Пароли не совпадают</div>
+                        </div>
+                        <div class="mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">Согласие с правилами регистрации</label>
+                            <div class="invalid-feedback" id="checkError">Необходимо соглашение</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary rounded-1" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-warning rounded-1">Зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page">
+        
+        <!--Навбар-->
+
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html"><img src="img/logo2.png" height="32" alt="Music House"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="aboutus.html">О нас</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Каталог</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="adress.html">Где нас найти?</a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-outline-dark me-2 rounded-1" data-bs-toggle="modal" data-bs-target="#enterModal"><img src="img/user.png" height="24" alt="u1"></button>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section id="item" class="mt-4">
+                <div class="container">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb crumb">
+                          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-dark">Каталог</a></li>
+                          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-dark">Струнные</a></li>
+                          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-dark">Электрогитары</a></li>
+                          <li class="breadcrumb-item active fw-bold" aria-current="page">EBANEZ Blue Fish Poseidon IceCube Noob H57FGK82</li>
+                        </ol>
+                      </nav>
+                    <div class="row">
+                        <div class="col">
+                            <div class="text-center">
+                                <img src="img/blue.jpeg" width=75% alt="red">
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="text-start">
+                                <h4><b>EBANEZ Blue Fish Poseidon IceCube Noob H57FGK82</b></h4>
+                                <div class="row mt-5">
+
+                                    <!--Левая часть-->
+
+                                    <div class="col">
+                                            <p><span class="text-muted">Страна производитель: </span>Мозамбик</p>
+                                            <p><span class="text-muted">Год выпуска: </span>2019 год</p>
+                                            <p><span class="text-muted">Модель: </span>EBANEZ Blue Fish Poseidon IceCube Noob</p>
+                                            <h5 class="my-4">Описание</h5>
+                                            <p>
+                                                Электрогитара оборудована кленовым грифом с накладкой из палисандра. Маркеры ладов выполнены в виде классических акульих зубов белого цвета. Крепление грифа к деке выполнено на винтах. Инструмент пользуется популярностью среди гитаристов, играющих рок и мелодичную инструментальную музыку. На деку установлен фиксированный бридж от производителя. Количество ладов грифа - 24, тип ладов - Jamal. Цвет гитары синий матовый, фурнитура синего цвета.
+                                            </p>
+                                    </div>
+
+                                    <!--Правая часть-->
+
+                                    <div class="col">
+                                        <div class="box shadow-sm">
+                                            <h5 class="mt-3"><s class="ms-4 text-muted">100 000 ₽</s><span class="ms-2 bg-warning fs-6 rounded-1 px-1">-1000</span></h5>
+                                            <h3 class="ms-4"><b>99 000 ₽</b></h3>
+                                            <p class="ms-4">
+                                                <small class="text-muted me-2">Цвет:</small>
+                                                <a href="item-red.html"><img src="img/redsq.png" height="24" alt="red"></a>
+                                                <a href="item-blue.html"><img src="img/bluesq.png" height="24" alt="edick" class="ms-2"></a>
+                                            </p>
+                                            <div class="text-center mt-3">
+                                                <a href="cart.html"><button type="button" class="btn btn-warning px-4">Добавить в корзину</button></a>
+                                            </div>
+
+                                            <hr>
+
+                                            <div class="ms-3 text-success">
+                                                <small><b>1 бонус</b> Сбер "Спасибо"</small>
+                                            </div>
+
+                                            <div class="ms-3">
+                                                <small><span class="bg-warning rounded-1 px-1">+300 рублей</span> на транспортную карту <i class="text-primary fw-bold">АЛFА</i></small>
+                                            </div>
+
+                                            <hr>
+
+                                            <div class="ms-3">
+                                                <p><small>Самовывоз через 15 минут, <b>бесплатно</b></small></p>
+                                                <p><small>Доставка, <b>завтра</b></small></p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+        
+                </div>
+            </section>
+        </main>
+
+        <!--Футер-->
+
+        <footer>
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
+                    <p class="col-md-4 mb-0">© 2022 Music House</p>
+                    <a href="index.html"><img src="img/logo2.png" width="128" alt="Copy Star"></a>
+                    <ul class="nav col-md-4 justify-content-end">
+                        <li class="nav-item"><a href="index.html" class="nav-link px-2 text-white">Каталог</a></li>
+                        <li class="nav-item"><a href="aboutus.html" class="nav-link px-2 text-white">О нас</a></li>
+                        <li class="nav-item"><a href="adress.html" class="nav-link px-2 text-white">Где нас найти?</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!--Если не работает - посмотреть ниже, всё ли здесь-->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>

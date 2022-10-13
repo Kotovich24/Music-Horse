@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Корзина</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="icon/site.webmanifest">
+    <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        body {
+            background: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        
+        <!--Навбар-->
+
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html"><img src="img/logo2.png" height="32" alt="Music House"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="aboutus.html">О нас</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Каталог</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="adress.html">Где нас найти?</a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-outline-dark me-2 rounded-1" data-bs-toggle="modal" data-bs-target="#enterModal"><img src="img/user.png" height="24" alt="u1"></button>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section id="cart">
+                <div class="container">
+                    <div class="row">
+                        <h1 class="mt-5"><b>Корзина</b> <span class="text-muted" style="font-size: 24px;">1</span></h1>
+                        <div class="row">
+
+                            <!--Левая часть-->
+
+                            <div class="col-12 col-lg-9 text-center">
+                                <div class="box">
+                                    <div class="row">
+                                        <div class="col-12 col-lg-2">
+                                            <img src="img/red.jpeg" alt="red" height="98">
+                                        </div>
+                                        <div class="col-12 col-lg-6">
+                                            <h5><b>EBANEZ Red Square Dragon Lore Skrillex Pro H57FKG81</b></h5>
+                                        </div>
+                                        <div class="col-12 col-lg-2 text-center">
+                                            <button type="button" class="btn"><b>-</b></button>
+                                            <span>1</span>
+                                            <button type="button" class="btn"><b>+</b></button>
+                                            <br>
+                                            <a href="#" class="link-dark text-decoration-none text-muted">Удалить</a>
+                                        </div>
+                                        <div class="col-12 col-lg-2">
+                                            <h4><b>99 000 ₽</b></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Правая часть-->
+
+                            <div class="col-12 col-lg-3 mt-2 mt-lg-0">
+                                <div class="box">
+                                    <h5 class="mb-3"><b>Детали заказа</b></h5>
+                                    <div class="row">
+                                        <div class="col">
+                                            <p><b>1 товар:</b></p>
+                                            <h5><b>Итого:</b></h5>
+                                        </div>
+                                        <div class="col text-end">
+                                            <p>99 000 ₽</p>
+                                            <h5><b>99 000 ₽</b></h5>
+                                        </div>
+                                    </div>
+                                    <div class="text-center">
+                                        <a href="order.html"><button type="button" class="btn btn-warning mt-5  mb-3 rounded-1">Сформировать заказ</button></a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!--Футер-->
+
+        <footer>
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
+                    <p class="col-md-4 mb-0">© 2022 Music House</p>
+                    <a href="index.html"><img src="img/logo2.png" width="128" alt="Copy Star"></a>
+                    <ul class="nav col-md-4 justify-content-end">
+                        <li class="nav-item"><a href="index.html" class="nav-link px-2 text-white">Каталог</a></li>
+                        <li class="nav-item"><a href="aboutus.html" class="nav-link px-2 text-white">О нас</a></li>
+                        <li class="nav-item"><a href="adress.html" class="nav-link px-2 text-white">Где нас найти?</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!--Если не работает - посмотреть ниже, всё ли здесь-->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

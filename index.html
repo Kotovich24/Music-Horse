@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Music House Каталог</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icon/favicon-16x16.png">
+    <link rel="manifest" href="icon/site.webmanifest">
+    <link rel="mask-icon" href="icon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+<body>
+    
+    <!--Войти и Регистрация-->
+
+    <div class="modal fade" id="enterModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Вход</h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button> -->
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <form action="">
+                                <div class="mb-2">
+                                    <input type="text" placeholder="Логин" id="loginInput" name="login" class="form-control rounded-1 border-secondary">
+                                    <div class="invalid-feedback" id="loginError">Неверный логин</div>
+                                </div>
+                                <div class="mb-2">
+                                    <input type="password" placeholder="Пароль" id="passwordInput" name="pass" class="form-control rounded-1 border-secondary">
+                                    <div class="invalid-feedback" id="passwordError">Неверный пароль</div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="text-center">
+                                <h5>
+                                    <b>Впервые у нас?</b>
+                                </h5>
+                                <button type="button" class="btn btn-warning rounded-1" data-bs-toggle="modal" data-bs-target="#registerModal">Зарегистрироваться</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary rounded-1" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-warning rounded-1">Войти</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Регистрация</h5>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button> -->
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="mb-2">
+                            <input type="text" placeholder="Имя" id="nameInput" name="name" class="form-control rounded-1 border-dark">
+                            <div class="invalid-feedback" id="nameError">Введите имя</div>
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" placeholder="Фамилия" id="surnameInput" name="surname" class="form-control rounded-1 border-dark">
+                            <div class="invalid-feedback" id="surnameError">Введите фамилию</div>
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" placeholder="Отчество (необязательно)" id="patronymicInput" name="patronymic" class="form-control rounded-1 border-dark">
+                        </div>
+                        <div class="mb-2">
+                            <input type="text" placeholder="Логин" id="loginInput" name="login" class="form-control rounded-1 border-dark">
+                            <div class="invalid-feedback" id="loginError">Введите логин</div>
+                        </div>
+                        <div class="mb-2">
+                            <input type="email" placeholder="Email" id="emailInput" name="email" class="form-control rounded-1 border-dark">
+                            <div class="invalid-feedback" id="emailError">Введите почту</div>
+                        </div>
+                        <div class="mb-2">
+                            <input type="password" placeholder="Пароль" class="form-control rounded-1 border-dark">
+                            <div class="invalid-feedback" id="passwordError">Введите пароль</div>
+                        </div>
+                        <div class="mb-2">
+                            <input type="password" placeholder="Повторите пароль" class="form-control rounded-1 border-dark">
+                            <div class="invalid-feedback" id="repPasswordError">Пароли не совпадают</div>
+                        </div>
+                        <div class="mb-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">Согласие с правилами регистрации</label>
+                            <div class="invalid-feedback" id="checkError">Необходимо соглашение</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary rounded-1" data-bs-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-warning rounded-1">Зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page">
+        
+        <!--Навбар-->
+
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container">
+                    <a class="navbar-brand" href="index.html"><img src="img/logo2.png" height="32" alt="Copy Star"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    
+                    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link" href="aboutus.html">О нас</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="index.html">Каталог</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="adress.html">Где нас найти?</a>
+                            </li>
+                        </ul>
+                        <button type="button" class="btn btn-outline-dark me-2 rounded-1" data-bs-toggle="modal" data-bs-target="#enterModal"><img src="img/user.png" height="24" alt="u1"></button>
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+        
+        <!--JUMBOTRON и слайдер-->
+
+        <main>
+            <section id="catalog" class="mt-5">
+                <div class="container">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="guitarist p-5 mb-4 rounded-1">
+                                    <div class="container-fluid py-5 text-white text-end">
+                                        <h1 class="display-5 fw-bold">Только у нас!</h1>
+                                        <p class="fs-4">Самые лучшие инструменты в мире! <br> Мы работаем уже 200 лет!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="ulechka p-5 mb-4 rounded-1">
+                                    <div class="container-fluid py-5 text-white text-end">
+                                        <div style="margin-top: 350px;">
+                                            <h1 class="display-5 fw-bold">Группа "Юлечки"</h1>
+                                            <p class="fs-4"><q>Music House наш краш</q> - Юля Альфа</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xxl-8 col-lg-4  col-12">
+                            <h1><b>Каталог</b></h1>
+                        </div>
+                        <div class="col">
+
+                        </div>
+                        <div class="col-xxl-3 col-lg-3  col-12">
+                            <form class="d-flex" role="search">
+                                <input type="search" placeholder="🔎 поиск" class="form-control border-secondary mb-3" style="width: auto">
+                            </form>
+                        </div>
+
+                        
+                    </div>
+                </div>
+        
+                <hr class="mt-0">
+        
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-12">
+                            <h4 class="mb-4"><b>Категории</b></h4>
+
+                            <ul class="nav nav-pills flex-column mb-auto">
+                                <li>
+                                    <a class="btn-toggle-nav nav-link text-dark" data-bs-toggle="collapse" data-bs-target="#string-collapse" aria-expanded="false">
+                                        Струнные <span class="bg-secondary text-white px-1 rounded-1">3</span>
+                                    </a>
+                                    <div class="collapse show" id="string-collapse">
+                                        <ul class="btn-toggle-nav list-unstyled pb-1 small">
+                                            <li class="mb-2 ms-4">
+                                                <input class="form-check-input" type="checkbox" value="" id="check1">
+                                                <label class="form-check-label" for="check1">
+                                                    Классические гитары 
+                                                </label>
+                                            </li>
+
+                                            <li class="mb-2 ms-4">
+                                                <input class="form-check-input" type="checkbox" value="" id="check2">
+                                                <label class="form-check-label" for="check2">
+                                                    Акустические гитары 
+                                                </label>
+                                            </li>
+
+                                            <li class="mb-2 ms-4">
+                                                <input class="form-check-input" type="checkbox" value="" id="check3">
+                                                <label class="form-check-label" for="check3">
+                                                    Электрогитары
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a class="btn-toggle-nav nav-link text-dark" data-bs-toggle="collapse" data-bs-target="#key-collapse" aria-expanded="false">
+                                        Клавишные <span class="bg-secondary text-white px-1 rounded-1">2</span>
+                                    </a>
+                                    <div class="collapse show" id="key-collapse">
+                                        <ul class="btn-toggle-nav list-unstyled pb-1 small">
+                                            <li class="mb-2 ms-4">
+                                                <input class="form-check-input" type="checkbox" value="" id="check4">
+                                                <label class="form-check-label" for="check4">
+                                                    Синтезаторы
+                                                </label>
+                                            </li>
+
+                                            <li class="mb-2 ms-4">
+                                                <input class="form-check-input" type="checkbox" value="" id="check5">
+                                                <label class="form-check-label" for="check5">
+                                                    MIDI-клавиатуры
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                <li>
+                                    <a class="btn-toggle-nav nav-link text-dark" data-bs-toggle="collapse" data-bs-target="#viol-collapse" aria-expanded="false">
+                                        Смычковые <span class="bg-secondary text-white px-1 rounded-1">2</span>
+                                    </a>
+                                    <div class="collapse show" id="viol-collapse">
+                                        <ul class="btn-toggle-nav list-unstyled pb-1 small">
+                                            <li class="mb-2 ms-4">
+                                                <input class="form-check-input" type="checkbox" value="" id="check7">
+                                                <label class="form-check-label" for="check7">
+                                                    Скрипки
+                                                </label>
+                                            </li>
+
+                                            <li class="mb-2 ms-4">
+                                                <input class="form-check-input" type="checkbox" value="" id="check8">
+                                                <label class="form-check-label" for="check8">
+                                                    Виолончели
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                                </li>
+                            </ul>
+                        </div>
+        
+                        <div class="col-md-8 col-12">
+                            <div class="mb-4">
+                                <h4 class="float-start"><b>Все товары</b></h4>
+                                <div class="dropdown float-end">
+                                    <a class="btn border-0 dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Сортировать по:
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuSort">
+                                        <a class="dropdown-item" href="#">По новизне</a>
+                                        <a class="dropdown-item" href="#">По году производства</a>
+                                        <a class="dropdown-item" href="#">По наименованию</a>
+                                        <a class="dropdown-item" href="#">По цене</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row float-start mb-5">
+                                <div class="col-lg-6 col-xl-4 col-md-12">
+                                    <div class="card border-0">
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <a href="item-red.html">
+                                                    <img src="img/red.jpeg" alt="red" class="p-2">
+                                                </a>
+                                            </div>
+        
+                                            <h4><b>99 000 ₽</b></h4>
+        
+                                            <p class="card-text">
+                                                EBANEZ Red Square Dragon Lore Skrillex Pro H57FKG81
+                                            </p>
+                                            <a href="cart.html"><button type="button" class="btn btn-warning">В корзину</button></a>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-lg-6 col-xl-4 col-md-12">
+                                    <div class="card border-0">
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <img src="img/blue.jpeg" alt="blue" class="p-2">
+                                            </div>
+        
+                                            <h4><b>99 000 ₽</b></h4>
+        
+                                            <p class="card-text">
+                                                EBANEZ Blue Fish Poseidon IceCube Noob H57FGK82
+                                            </p>
+                                            <button type="button" class="btn btn-warning">В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-lg-6 col-xl-4 col-md-12">
+                                    <div class="card border-0">
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <img src="img/N.jpeg" alt="N" class="p-2">
+                                            </div>
+        
+                                            <h4><b>99 000 ₽</b></h4>
+        
+                                            <p class="card-text">
+                                                EBANEZ Black Godzilla Dr.Dre Definitive H57GFK83
+                                            </p>
+                                            <button type="button" class="btn btn-warning">В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-lg-6 col-xl-4 col-md-12">
+                                    <div class="card border-0">
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <img src="img/button.jpeg" alt="btn" class="p-3">
+                                            </div>
+        
+                                            <h4><b>119 000 ₽</b></h4>
+        
+                                            <p class="card-text">
+                                                EBANEZ Black and White Zebra Titan Michael Jackson Deluxe H57KGF84
+                                            </p>
+                                            <button type="button" class="btn btn-warning">В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="col-lg-6 col-xl-4 col-md-12">
+                                    <div class="card border-0">
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <img src="img/violin.jpeg" alt="viol" class="p-3">
+                                            </div>
+        
+                                            <h4><b>73 499 ₽</b></h4>
+        
+                                            <p class="card-text">
+                                                EBANEZ String Bar Classic Nutella Gazmanov Luxury V16KFC32
+                                            </p>
+                                            <button type="button" class="btn btn-warning">В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class=" col-lg-6 col-xl-4 col-md-12">
+                                    <div class="card border-0">
+                                        <div class="card-body">
+                                            <div class="text-center">
+                                                <img src="img/chair.png" alt="chair" class="p-5">
+                                            </div>
+        
+                                            <h4><b>19 999 ₽</b></h4>
+        
+                                            <p class="card-text">
+                                                EBANEZ Tabouret Night Pack Fetka-Fetka Samurai Gold D83ICK02
+                                            </p>
+                                            <button type="button" class="btn btn-warning">В корзину</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    
+        <!--Футер-->
+
+        <footer>
+            <div class="container">
+                <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
+                    <p class="col-md-4 mb-0">© 2022 Music House</p>
+                    <a href="index.html"><img src="img/logo2.png" width="128" alt="Copy Star"></a>
+                    <ul class="nav col-md-4 justify-content-end">
+                        <li class="nav-item"><a href="index.html" class="nav-link px-2 text-white">Каталог</a></li>
+                        <li class="nav-item"><a href="aboutus.html" class="nav-link px-2 text-white">О нас</a></li>
+                        <li class="nav-item"><a href="adress.html" class="nav-link px-2 text-white">Где нас найти?</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!--Если не работает - посмотреть ниже, всё ли здесь-->
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
